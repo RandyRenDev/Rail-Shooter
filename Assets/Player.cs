@@ -2,14 +2,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UIElements;
 using UnityStandardAssets.CrossPlatformInput;
 
 public class Player : MonoBehaviour
 {
-    [Tooltip("In ms^-1")] [SerializeField] float xSpeed = 4f;
+    [Tooltip("In ms^-1")] [SerializeField] float xSpeed = 20f;
+    [Tooltip("In ms^-1")] [SerializeField] float ySpeed = 20f;
+    [Tooltip("In ms^-1")] [SerializeField] float xPos = 10f;
+    [Tooltip("In ms^-1")] [SerializeField] float yPos = 10f;
+    [SerializeField] float positionPitchFactor = -3f;
+    [SerializeField] float controlPitchFactor = -5f;
+    [SerializeField] float positionYawFactor = 5f;
+    [SerializeField] float controllRollFactor = -3f;
+
+    float xThrow;
+    float yThrow;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +32,36 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
+        ProcessMovement();
+        ProcessRoll();
+    }
+
+    void ProcessRoll()
+    {
+        float pitchDueToPosition = transform.localPosition.y * positionPitchFactor;
+        float pitchDueToControlThrow = yThrow * controlPitchFactor;
+        float pitch = pitchDueToPosition + pitchDueToControlThrow;
+        float yaw = transform.localPosition.x * positionYawFactor;
+        float roll = xThrow * controllRollFactor;
+        transform.localRotation = Quaternion.Euler(pitch, yaw, roll);
+    }
+
+    void ProcessMovement()
+    {
+        xThrow = CrossPlatformInputManager.GetAxis("Horizontal");
         float xOffset = xThrow * xSpeed * Time.deltaTime;
         float rawNewXPos = transform.localPosition.x + xOffset;
 
-        float clampedPos = Mathf.Clamp(rawNewXPos, -5f, 5f);
+        float clampedXPos = Mathf.Clamp(rawNewXPos, -xPos, xPos);
 
-        transform.localPosition = new Vector3(clampedPos, transform.localPosition.y, transform.localPosition.z);  
+        transform.localPosition = new Vector3(clampedXPos, transform.localPosition.y, transform.localPosition.z);
+
+        yThrow = CrossPlatformInputManager.GetAxis("Vertical");
+        float yOffset = yThrow * ySpeed * Time.deltaTime;
+        float rawNewYPos = transform.localPosition.y + yOffset;
+
+        float clampedYPos = Mathf.Clamp(rawNewYPos, -yPos, yPos);
+
+        transform.localPosition = new Vector3(transform.localPosition.x, clampedYPos, transform.localPosition.z);
     }
 }
