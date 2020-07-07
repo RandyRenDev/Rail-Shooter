@@ -63,8 +63,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\MusicPlayer.cs" />
-    <Compile Include="Assets\Player.cs" />
+    <Compile Include="Assets\Scripts\MusicPlayer.cs" />
+    <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\SceneLoader.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\ActivateTrigger.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\AlphaButtonClickMask.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\AutoMobileShaderSwitch.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\AutoMoveAndRotate.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\CameraRefocus.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\CurveControlledBob.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\DragRigidbody.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\DynamicShadowSettings.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\EventSystemChecker.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\FOVKick.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\FPSCounter.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\FollowTarget.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\LerpControlledBob.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\ObjectResetter.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\ParticleSystemDestroyer.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\PlatformSpecificContent.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\SmoothFollow.cs" />
+    <Compile Include="Assets\Store\Standard Assets\Utility\WaypointProgressTracker.cs" />
     <Compile Include="Assets\Store\StarSparrow\Readme\Readme Files\Scripts\ReadmeStarSparrow.cs" />
     <None Include="Assets\Store\epyphany\ReadMe.txt" />
     <Reference Include="UnityEngine">
