@@ -9,8 +9,9 @@ public class CollisionHandler : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        StartDeathSequence();
-        Invoke("ReloadScene", levelLoadDelay);
+            StartDeathSequence();
+            Invoke("ReloadScene", levelLoadDelay);
+
     }
 
     private void StartDeathSequence()

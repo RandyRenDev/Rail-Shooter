@@ -286,6 +286,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &503367486 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6624071488344504225, guid: a79d1191e3ba780488e559b3091fee81,
+    type: 3}
+  m_PrefabInstance: {fileID: 7775459705807722759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &561784469
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +430,12 @@ MonoBehaviour:
     - {fileID: 1686058225}
   smoothRoute: 1
   editorVisualisationSubsteps: 100
+--- !u!1 &786117583 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7775459707786659544, guid: a79d1191e3ba780488e559b3091fee81,
+    type: 3}
+  m_PrefabInstance: {fileID: 7775459705807722759}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &807211035
 GameObject:
   m_ObjectHideFlags: 0
@@ -1565,10 +1577,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 810127210}
     m_Modifications:
+    - target: {fileID: 6624071488344504225, guid: a79d1191e3ba780488e559b3091fee81,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun Left
+      objectReference: {fileID: 0}
     - target: {fileID: 7774367139901109528, guid: a79d1191e3ba780488e559b3091fee81,
         type: 3}
       propertyPath: m_Name
       value: Player Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775459707297942875, guid: a79d1191e3ba780488e559b3091fee81,
+        type: 3}
+      propertyPath: Guns.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7775459707297942875, guid: a79d1191e3ba780488e559b3091fee81,
+        type: 3}
+      propertyPath: Guns.Array.data[0]
+      value: 
+      objectReference: {fileID: 503367486}
+    - target: {fileID: 7775459707297942875, guid: a79d1191e3ba780488e559b3091fee81,
+        type: 3}
+      propertyPath: Guns.Array.data[1]
+      value: 
+      objectReference: {fileID: 786117583}
+    - target: {fileID: 7775459707786659544, guid: a79d1191e3ba780488e559b3091fee81,
+        type: 3}
+      propertyPath: m_Name
+      value: Gun Right
       objectReference: {fileID: 0}
     - target: {fileID: 7779897435570181084, guid: a79d1191e3ba780488e559b3091fee81,
         type: 3}
